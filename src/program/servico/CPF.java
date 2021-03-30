@@ -25,11 +25,8 @@ public class CPF extends Endereco{
 	public void CPFPaciente (String C) {
 		this.cpf = this.Format(C, false);
 	}
-
-	public void CpfPessoa(String cpf) {
-		this.cpf = cpf;
-	}
-
+	
+	//Validador de CPF
 	public boolean isCPF() {
 
 		if (this.cpf.equals("00000000000") || this.cpf.equals("11111111111") || this.cpf.equals("22222222222")
@@ -82,7 +79,8 @@ public class CPF extends Endereco{
 	public String getCPF(boolean Mascara) {
 		return Format(this.cpf, Mascara);
 	}
-
+	
+	//Simplifica o número do CPF para receber a marcara
 	private String Format(String C, boolean Mascara) {
 		if (Mascara) {
 			return (C.substring(0, 3) + "." + C.substring(3, 6) + "." + C.substring(6, 9) + "-" + C.substring(9, 11));
@@ -113,7 +111,7 @@ public class CPF extends Endereco{
 	}
 	
     public String getCpfPaciente() {
-        return formatarCampo("###.###.###-##", cpf);
+        return formatarCampo(Formato, cpf);
     }
 	
 	public String toStringCpf() {

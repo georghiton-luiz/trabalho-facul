@@ -39,6 +39,7 @@ public class TelefonesFormatado {
 		return Format(this.celular, Mascara);
 	}
 	
+	//Simplifica os números de telefone para receber a marcara
 	private String Format(String C, boolean Mascara) {
 		if (Mascara) {
 			return (C.substring(0, 7) + "." + C.substring(7, 11));

@@ -37,14 +37,14 @@ public class Programa {
 		System.out.println("");
 		
 		Pessoa cpfPaciente = new Pessoa();
-		cpfPaciente.CpfPessoa(cpf);
+		cpfPaciente.CPFPaciente(cpf);
 		
 		while(cpfPaciente.isCPF() == false) {
 			System.out.println("CFP invalido!\n\nDigitar um CPF valido!");
 			cpf = tc.next();
 			System.out.println("");
 			
-			cpfPaciente.CpfPessoa(cpf);			
+			cpfPaciente.CPFPaciente(cpf);			
 		}		
 		
 		System.out.print("Digite seu R.G.: ");
@@ -112,31 +112,31 @@ public class Programa {
 		respVacina = tc.nextInt();		
 		
 		while(respVacina > 0 && respVacina > 1) {
-			System.out.print("Opção invalida!\nPaciente irá receber a 1ª dose da vacina? [0] = SIM ou [1] NÃO: ");
+			System.out.print("\nOpção invalida!\n\nPaciente irá receber a 1ª dose da vacina? [0] = SIM ou [1] NÃO: ");
 			respVacina = tc.nextInt();
 		}
 
 		if (respVacina == 0) {
 
-			System.out.print("Qual vacina será aplicada? [0] = CoronaVac ou  [1] = Covishield: ");
+			System.out.print("\nQual vacina será aplicada? [0] = CoronaVac ou  [1] = Covishield: ");
 			resp = tc.nextInt();			
 
 			while (resp > 0 && resp > 1) {
-				System.out.print("Opção invalida!\nDigita [0] = CoronaVac ou  [1] = Covishield: ");
+				System.out.print("\nOpção invalida!\nDigita [0] = CoronaVac ou  [1] = Covishield: ");
 				resp = tc.nextInt();
 			}
 			
 			if (resp == 0) {
-				System.out.println("Data da primeira vacina: ");
+				System.out.print("\nata da primeira vacina: ");
 				dataVacina1 = tc.next();
 
 			} else if (resp == 1) {
-				System.out.println("Data da primeira vacina: ");
+				System.out.print("\nData da primeira vacina: ");
 				dataVacina1 = tc.next();
 			}
 
 		} else {
-			System.out.println("Data da primeira vacina: ");
+			System.out.print("\nData da primeira vacina: ");
 			dataVacina1 = tc.next();
 		}		
 		

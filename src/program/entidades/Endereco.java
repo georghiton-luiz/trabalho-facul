@@ -88,7 +88,8 @@ public class Endereco extends DataForm{
 	public void setNum(String num) {
 		this.num = num;
 	}
-
+	
+	//Simplifica o número do CEP para receber a marcara
 	private String FormatCep(String C, boolean Mascara) {
 		if (Mascara) {
 			return (C.substring(0, 2) + "." + C.substring(2, 5) + "-" + C.substring(5, 7));

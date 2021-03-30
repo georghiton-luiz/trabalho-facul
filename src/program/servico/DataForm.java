@@ -50,6 +50,7 @@ public class DataForm extends TelefonesFormatado{
 		this.dataVacina1 = this.Format(data, false);
 	}
 
+	//Simplifica a data para receber a marcara
 	private String Format(String C, boolean Mascara) {
 		if (Mascara) {
 			return (C.substring(0, 2) + "/" + C.substring(2, 4) + "/" + C.substring(4, 8));
@@ -98,7 +99,7 @@ public class DataForm extends TelefonesFormatado{
 			return null;			
 		}		
 	}
-
+	//Configura a data da 2ª dose a partir do tipo de vacina e da data da 1ª dose
 	public String getDataVacina2() throws ParseException {
 
 		Date d1 = new Date();
@@ -164,17 +165,6 @@ public class DataForm extends TelefonesFormatado{
 		dataBD = sdf2.format(d1);
 
 		return dataBD;
-	}
-
-	public String toStringData() {
-		try {
-			return "\nData de Nascimento: " + getDataNascFormatada() + "\nVacia aplicada: " + TipoVacina() + "\nData 1ª dose: "
-		+ getDataVacina1Formatada() + "\nData 2ª dose: " + getDataVacina2();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 }

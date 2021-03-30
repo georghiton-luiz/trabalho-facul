@@ -2,6 +2,7 @@ package program.servico;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Conexao {
@@ -42,6 +43,20 @@ public class Conexao {
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public ResultSet executaBusca(String sql) {
+		
+		try {
+			Statement stm = con.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			con.close();
+			return rs;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 
